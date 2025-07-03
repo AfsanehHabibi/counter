@@ -43,7 +43,7 @@ class PropertyServiceTest {
     }
 
     @Test
-    void whenAddingNewPropertyItsValueWillBeAdded() throws Exception {
+    void whenAddingNewPropertyItsValueWillBeAdded() {
         propertyService.setValue("newKey", "newValue");
         assertEquals("newValue", propertyService.getValue("newKey"));
 
