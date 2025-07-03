@@ -2,7 +2,6 @@ package ir.nofitech.counter.service;
 
 import ir.nofitech.counter.config.PropertiesConfig;
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.io.File;
 import java.util.concurrent.locks.ReadWriteLock;
@@ -15,7 +14,6 @@ public class PropertyService {
     private volatile long lastReadTime = 0;
     private PropertiesConfiguration properties;
 
-    // Constructor injection for file path
     public PropertyService(PropertiesConfig config, PropertiesConfiguration properties) {
         this.config = config;
         this.properties = properties;
