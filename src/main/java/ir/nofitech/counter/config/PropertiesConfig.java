@@ -13,7 +13,7 @@ import java.time.temporal.ChronoUnit;
 @Component
 @ConfigurationProperties(prefix = "app.properties")
 public class PropertiesConfig {
-    private String filePath = "D:\\1.properties";
+    private String filePath = "d:\\1.properties";
 
     @DurationUnit(ChronoUnit.MILLIS)
     private Duration cacheDuration = Duration.ofMinutes(1);
