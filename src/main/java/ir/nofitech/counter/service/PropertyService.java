@@ -3,7 +3,6 @@ package ir.nofitech.counter.service;
 import ir.nofitech.counter.config.PropertiesConfig;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.springframework.stereotype.Service;
-import java.io.File;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -38,7 +37,7 @@ public class PropertyService {
         lock.writeLock().lock();
         try {
             properties.setProperty(key, value);
-            properties.save(new File(config.getFilePath()));
+            properties.save();
             lastReadTime = System.currentTimeMillis();
         } catch (Exception e) {
             throw new RuntimeException("Failed to save properties to " + config.getFilePath(), e);
